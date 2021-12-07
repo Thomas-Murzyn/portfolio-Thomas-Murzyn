@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import Header from "./Components/Header";
 import picture from "./assets/IMG_3085.jpg";
 
@@ -18,6 +19,10 @@ import Realisation from "./Components/Realisation";
 // library.add(faEnvelope, faKey, faListAlt, faAddressCard);
 
 function App() {
+  const [back, setBack] = useState(false);
+  const [front, setFront] = useState(false);
+  const [diver, setDiver] = useState(false);
+
   return (
     <div>
       <Header />
@@ -68,34 +73,71 @@ function App() {
           </div>
 
           <div className="languages">
-            <div className="backend">
+            <div
+              onMouseEnter={() => setBack(true)}
+              onMouseLeave={() => setBack(false)}
+              className="backend"
+            >
               <h3 className="side-title">BACK-END</h3>
+              <LanguageWrapper isActive={back} fully={85}>
+                JAVASCRIPT / NODE JS
+              </LanguageWrapper>
 
-              <LanguageWrapper fully={85}>JAVASCRIPT / NODE JS</LanguageWrapper>
+              <LanguageWrapper isActive={back} fully={80}>
+                EXPRESS
+              </LanguageWrapper>
 
-              <LanguageWrapper fully={80}>EXPRESS</LanguageWrapper>
-
-              <LanguageWrapper fully={75}>MONGO DB</LanguageWrapper>
+              <LanguageWrapper isActive={back} fully={75}>
+                MONGO DB
+              </LanguageWrapper>
             </div>
 
-            <div className="frontend">
+            <div
+              onMouseEnter={() => setFront(true)}
+              onMouseLeave={() => setFront(false)}
+              className="frontend"
+            >
               <h3 className="side-title">FRONT-END</h3>
 
-              <LanguageWrapper fully={85}>JAVASCRIPT</LanguageWrapper>
+              <LanguageWrapper isActive={front} fully={85}>
+                JAVASCRIPT
+              </LanguageWrapper>
 
-              <LanguageWrapper fully={90}>HTML / CSS</LanguageWrapper>
+              <LanguageWrapper isActive={front} fully={90}>
+                HTML / CSS
+              </LanguageWrapper>
 
-              <LanguageWrapper fully={78}>REACT JS</LanguageWrapper>
+              <LanguageWrapper isActive={front} fully={78}>
+                REACT JS
+              </LanguageWrapper>
 
-              <LanguageWrapper fully={70}>REACT NATIVE</LanguageWrapper>
+              <LanguageWrapper isActive={front} fully={70}>
+                REACT NATIVE
+              </LanguageWrapper>
             </div>
 
-            <div className="diver">
+            <div
+              onMouseEnter={() => setDiver(true)}
+              onMouseLeave={() => setDiver(false)}
+              className="diver"
+            >
               <h3 className="side-title">OUTILS & TECHNOLOGIE</h3>
-              <LanguageWrapper fully={60}>Git / Github</LanguageWrapper>
-              <LanguageWrapper fully={70}>Visual Studio Code</LanguageWrapper>
-              <LanguageWrapper fully={80}>Postman</LanguageWrapper>
-              <LanguageWrapper fully={40}>Stripe</LanguageWrapper>
+
+              <LanguageWrapper isActive={diver} fully={60}>
+                GIT / GITHUB
+              </LanguageWrapper>
+
+              <LanguageWrapper isActive={diver} fully={70}>
+                VISUAL STUDIO CODE
+              </LanguageWrapper>
+
+              <LanguageWrapper isActive={diver} fully={80}>
+                POSTMAN
+              </LanguageWrapper>
+
+              <LanguageWrapper isActive={diver} fully={40}>
+                STRIPE
+              </LanguageWrapper>
             </div>
           </div>
         </div>

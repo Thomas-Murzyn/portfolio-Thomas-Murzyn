@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const PortfolioItem = ({ picture, site, name, techno }) => {
+const PortfolioItem = ({ picture, url, name, techno, description }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -9,18 +9,13 @@ const PortfolioItem = ({ picture, site, name, techno }) => {
       onMouseLeave={() => setIsActive(false)}
       rel="noreferrer"
       target="_blank"
-      href={site}
+      href={url}
       className="site-img-wrapper"
     >
       <img src={picture} alt="Vinted by Thomas" />
       <div style={{ display: isActive ? "flex" : "none" }} className="modal">
         <h3>{name}</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-          sit tenetur amet doloremque fuga magnam esse minima aliquam, et saepe?
-          Fugiat voluptates repellat molestias quo earum. Quam repellendus
-          cupiditate et.
-        </p>
+        <p>{description}</p>
 
         <h3>Technologies</h3>
 

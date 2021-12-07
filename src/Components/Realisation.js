@@ -1,7 +1,7 @@
-import vintedPicture from "../assets/Vinted.png";
-import tripadvisorPicture from "../assets/TripAdvisor.png";
-
 import PortfolioItem from "./PortfolioItem";
+import Data from "../Data";
+
+console.log(Data);
 
 const Realisation = () => {
   return (
@@ -9,18 +9,18 @@ const Realisation = () => {
       <h2>Portfolio</h2>
 
       <div className="portfolio-wrapper">
-        <PortfolioItem
-          techno={["Mongo DB", "Express", "React js", "Node js / Javascript"]}
-          name={"Réplique Full Stack de Vinted"}
-          picture={vintedPicture}
-          site={"https://amazing-shockley-9c0948.netlify.app/"}
-        />
-        <PortfolioItem
-          techno={["HTML", "CSS", "Vanilla Javascript"]}
-          name={"Réplique Front-end de TripAdvisor"}
-          picture={tripadvisorPicture}
-          site={"https://angry-curie-b38763.netlify.app/"}
-        />
+        {Data.map((item, index) => {
+          return (
+            <PortfolioItem
+              key={index}
+              techno={item.techno}
+              name={item.name}
+              picture={item.picture}
+              url={item.url}
+              description={item.description}
+            />
+          );
+        })}
       </div>
     </section>
   );
