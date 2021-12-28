@@ -1,8 +1,6 @@
 import PortfolioItem from "./PortfolioItem";
 import Data from "../Data";
 
-console.log(Data);
-
 const Realisation = () => {
   return (
     <section id="portfolio">

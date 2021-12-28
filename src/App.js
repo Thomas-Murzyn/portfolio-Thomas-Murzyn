@@ -1,22 +1,13 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./Components/Header";
-import picture from "./assets/IMG_3085.jpg";
 
-import cvPicture from "./assets/cv.png";
-import LanguageWrapper from "./Components/LanguageWrapper";
+import Presentation from "./Components/Presentation";
+
+import Accueil from "./Components/Accueil";
+import Competences from "./Components/Competences";
 import Realisation from "./Components/Realisation";
-
-// import { library } from "@fortawesome/fontawesome-svg-core";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faEnvelope,
-//   faKey,
-//   faListAlt,
-//   faAddressCard,
-// } from "@fortawesome/free-solid-svg-icons";
-// library.add(faEnvelope, faKey, faListAlt, faAddressCard);
+import Contact from "./Components/Contact";
 
 function App() {
   const [back, setBack] = useState(false);
@@ -26,124 +17,21 @@ function App() {
   return (
     <div>
       <Header />
-      <section id="accueil">
-        <h1>Thomas Murzyn</h1>
-        <h2>Développeur Web & Mobile</h2>
-      </section>
+      <Accueil />
 
-      <section id="presentation">
-        <h2>À propos de moi</h2>
-        <div className="description-wrapper">
-          <div className="col-1">
-            <img src={picture} alt="" />
-          </div>
-          <div className="col-2">
-            <p>
-              <span style={{ fontWeight: "700" }}>
-                Passionné par le développement Web{" "}
-              </span>
-              j'ai commencé à pratiquer en autodidacte en faisant des recherches
-              sur le net et via des formations en ligne tel que le{" "}
-              <a href="https://www.freecodecamp.org/">Freecodecamp</a>,
-              <a href="https://www.codecademy.com/"> Codecademy</a>,{" "}
-              <a href="https://www.udemy.com/"> Udemy</a> et d'autres.
-            </p>
+      <Presentation />
 
-            <p>
-              Après plusieurs année passé dans un emploi dont j'avais fais le
-              tour j'ai décidé de sauté le pas et d'entamer une reconversion
-              professionnel grâce l'excellente formation que propose
-              <a href="https://www.lereacteur.io/"> le Reacteur</a>.
-            </p>
-
-            <p>
-              Je développe des sites Web et des applications Mobile en{" "}
-              <span style={{ fontWeight: "700" }}>React </span> et{" "}
-              <span style={{ fontWeight: "700" }}>React Native</span>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="competences">
-        <h2>Mes compétences</h2>
-        <div className="competences-wrapper">
-          <div className="cv">
-            <img src={cvPicture} alt="" />
-          </div>
-
-          <div className="languages">
-            <div
-              onMouseEnter={() => setBack(true)}
-              onMouseLeave={() => setBack(false)}
-              className="backend"
-            >
-              <h3 className="side-title">BACK-END</h3>
-              <LanguageWrapper isActive={back} fully={85}>
-                JAVASCRIPT / NODE JS
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={back} fully={80}>
-                EXPRESS
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={back} fully={75}>
-                MONGO DB
-              </LanguageWrapper>
-            </div>
-
-            <div
-              onMouseEnter={() => setFront(true)}
-              onMouseLeave={() => setFront(false)}
-              className="frontend"
-            >
-              <h3 className="side-title">FRONT-END</h3>
-
-              <LanguageWrapper isActive={front} fully={85}>
-                JAVASCRIPT
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={front} fully={90}>
-                HTML / CSS
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={front} fully={78}>
-                REACT JS
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={front} fully={70}>
-                REACT NATIVE
-              </LanguageWrapper>
-            </div>
-
-            <div
-              onMouseEnter={() => setDiver(true)}
-              onMouseLeave={() => setDiver(false)}
-              className="diver"
-            >
-              <h3 className="side-title">OUTILS & TECHNOLOGIE</h3>
-
-              <LanguageWrapper isActive={diver} fully={60}>
-                GIT / GITHUB
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={diver} fully={70}>
-                VISUAL STUDIO CODE
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={diver} fully={80}>
-                POSTMAN
-              </LanguageWrapper>
-
-              <LanguageWrapper isActive={diver} fully={40}>
-                STRIPE
-              </LanguageWrapper>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Competences
+        back={back}
+        setBack={setBack}
+        front={front}
+        setFront={setFront}
+        diver={diver}
+        setDiver={setDiver}
+      />
 
       <Realisation />
+      <Contact />
     </div>
   );
 }
