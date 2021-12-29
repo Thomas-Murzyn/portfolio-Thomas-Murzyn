@@ -12,7 +12,7 @@ const PortfolioItem = ({ picture, url, name, techno, description }) => {
       href={url}
       className="site-img-wrapper"
     >
-      <img src={picture} alt="Vinted by Thomas" />
+      <img src={picture} alt={name} />
       <div style={{ display: isActive ? "flex" : "none" }} className="modal">
         <h3>{name}</h3>
         <p>{description}</p>
