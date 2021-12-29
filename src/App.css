@@ -489,6 +489,10 @@ nav a:hover {
   .contact-form {
     width: 80vw;
   }
+
+  .contact-form input:last-child {
+    padding: 10px 30px;
+  }
 }
 
 /* Media general */
