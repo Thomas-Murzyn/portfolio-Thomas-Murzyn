@@ -13,18 +13,18 @@ const Presentation = () => {
             <span style={{ fontWeight: "700" }}>
               Passionné par le développement Web{" "}
             </span>
-            j'ai commencé à pratiquer en autodidacte en faisant des recherches
-            sur le net et via des formations en ligne tel que le{" "}
+            j'ai commencé à pratiquer en autodidacte et via des formations en
+            ligne telles que le{" "}
             <a href="https://www.freecodecamp.org/">Freecodecamp</a>,
             <a href="https://www.codecademy.com/"> Codecademy</a>,{" "}
             <a href="https://www.udemy.com/"> Udemy</a> et d'autres.
           </p>
 
           <p>
-            Après plusieurs année passé dans un emploi dont j'avais fais le tour
-            j'ai décidé de sauté le pas et d'entamer une reconversion
-            professionnel grâce l'excellente formation que propose
-            <a href="https://www.lereacteur.io/"> le Reacteur</a>.
+            Après plusieurs années passées dans un emploi dont j'avais fais le
+            tour j'ai sauté le pas et entamé une reconversion professionnelle
+            via la formation de développement web que propose
+            <a href="https://www.lereacteur.io/"> Le Reacteur</a>.
           </p>
 
           <p>
